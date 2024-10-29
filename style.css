@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  animation: overall-background-change 10s linear infinite; /* For overall background animation */
+}
+
+@keyframes overall-background-change {
+  0% {
+    background-color: #ff4500; /* Orange */
+  }
+  25% {
+    background-color: #0e79aa; /* Yellow */
+  }
+  50% {
+    background-color: #81d8cc; /* Teal */
+  }
+  75% {
+    background-color: #6a5acd; /* Slate Blue */
+  }
+  100% {
+    background-color: #ff4500; /* Back to Orange */
+  }
+}
+
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+  height: auto;
+  background-color: rgba(255, 69, 0, 0.8); /* Slightly transparent for layering */
+  border-radius: 8px;
+  padding: 20px;
+  animation: background-color-change 20s linear infinite;
+  backdrop-filter: blur(5px); /* Adds a blur effect to the background */
+}
+
+@keyframes background-color-change {
+  0%,
+  100% {
+    background-color: rgba(255, 69, 0, 0.8);
+  }
+  50% {
+    background-color: rgba(255, 255, 0, 0.8);
+  }
+  75% {
+    background-color: rgba(129, 216, 204, 0.8);
+  }
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-family: 'Arial Black', sans-serif; /* Bold font style */
+  font-size: 2.5em; /* Larger font for header */
+  position: relative;
+  animation: horizontal-motion 1s ease-in-out infinite alternate; /* Default motion for header */
+}
+
+@keyframes horizontal-motion {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px); /* Move 10px to the right */
+  }
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 6px;
+  font-size: 15px;
+  border: 1px solid #ccc; /* Base border for the input */
+  flex: 1; /* Allow input to grow within the flexbox */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: blue;
+  color: aliceblue;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: cornflowerblue;
+}
+
+.todolist-hover {
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgba(173, 216, 230, 0.9); /* Light blue with transparency */
+  transition: height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+
+.todolist-placeholder {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+.todo-item {
+  padding: 15px;
+  background-color: rgba(64, 224, 208, 0.9); /* Light teal */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-family: 'Comic Sans MS', cursive; /* Unique font for list items */
+  font-weight: bold; /* Bold text in list items */
+  animation: drop-in 0.5s ease; /* Animation for adding */
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+  color: aliceblue;
+}
